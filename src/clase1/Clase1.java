@@ -11,16 +11,10 @@ public class Clase1 {
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        System.out.println("Introducir numero 1: ");
-        int numero1 = input.nextInt();       
-        System.out.println("Introducir numero 2: ");
-        int numero2 = input.nextInt();
-
-        int suma = 0;
-        for(int i= numero1+1; i < numero2; i++){
-            suma += i;
-        }
-        System.out.println("LA suma es: "+suma);
+        System.out.println("Introducir numero: ");
+        int n = input.nextInt();
+        
+        seriePotenciaDeDos(n);
     }
     
     public void diaDeLaSemanaConSwitch(){
@@ -65,5 +59,23 @@ public class Clase1 {
         System.out.println("el dia de la semana es: " + Semana[numero1-1]);
         
        
+    }
+    
+    public static int verificarMayusculaOMinuscula(char letra){
+    
+        return (letra >= 'A' && letra <= 'Z') ? 1: (letra >= 'a' && letra <= 'z') ? 0: -1;
+    }
+    
+/*    
+    Escriba un algoritmo que genere todas las potencias de 2, desde la 0-ésima hasta la ingresada por el usuario:
+    Ejemplo: 
+    Ingrese num: 10
+    1 2 4 8 16 32 64 128 256 512 1024
+*/
+    public static void seriePotenciaDeDos(int n){
+     
+        for(int i = 0; i <= n; i++){
+            System.out.println(Math.pow(2, i));
+        }
     }
 }
