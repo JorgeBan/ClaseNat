@@ -10,12 +10,13 @@ import java.util.Scanner;
 public class Clase1 {
 
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
+        /*Scanner input = new Scanner(System.in);
         System.out.println("Introducir numero: ");
         int n = input.nextInt();
-        
-        seriePotenciaDeDos(n);
+        */
+        tiempoDeViaje();
     }
+
     
     public void diaDeLaSemanaConSwitch(){
          Scanner input = new Scanner(System.in);
@@ -77,5 +78,126 @@ public class Clase1 {
         for(int i = 0; i <= n; i++){
             System.out.println(Math.pow(2, i));
         }
+    }
+    
+    
+    /*
+        Escriba un programa que muestre los n primeros números primos, donde n es ingresado por el usuario:
+       Cuantos primos: 10
+       2
+       3
+       5
+       7
+       11
+       13
+       17
+       19
+       23
+       29
+    */
+    
+    
+    public static void seriePrimos(int n){
+        /*for(int i = 0; i < n ; i++){
+            
+        }*/
+       int c = 1;
+       int i = 1;
+       while(i <= n){
+           if(esPrimo(c)){
+               System.out.println(c);
+               i++;
+           }
+           c++;
+       }
+    }
+    
+    private static boolean esPrimo(int n) {
+        if(n == 1) return false;
+        for(int i = 2 ; i <= n/2 ; i++){
+            if(n % i  == 0){
+                return false;
+            }
+        }
+        return true;
+    }
+ 
+    /*
+        Palabra Más corta y más larga
+Desarrolle un algoritmo que tenga la siguiente entrada:
+    • primero, el usuario ingresa un número entero n, que indica cuántas palabras ingresará a continuación;
+    • después el usuario ingresa n palabras.
+La salida del programa debe mostrar la palabra más larga y la más corta que fueron ingresadas por el usuario.
+La ejecución del programa debe verse así:
+Cantidad de palabras: 5
+Palabra 1: negro
+Palabra 2: amarillo
+Palabra 3: naranjo
+Palabra 4: azul
+Palabra 5: blanco
+La palabra mas larga es amarillo
+La palabra mas corta es azul
+
+    */
+    
+    public static void palabraMasCortaYMasLarga(int n){
+        
+        String palabras[] = new String[20];
+        for(int i = 0; i < n; i++){
+            Scanner input = new Scanner(System.in);
+            System.out.println("Palabra "+(i+1)+": ");
+            String palabra = input.nextLine();
+            palabras [i] = palabra;
+        }
+        
+        String palabraMasCorta = palabras[0];
+        String palabraMasLarga = palabras[0];
+        System.out.println("corta: "+ palabraMasCorta);
+        for(int j = 1 ; j < n; j++){
+          if(palabraMasCorta.length() > palabras[j].length()){
+              palabraMasCorta =  palabras[j];
+          }
+          if(palabras[j].length() > palabraMasLarga.length()){
+              palabraMasLarga =  palabras[j];
+          }
+        }
+        System.out.println("La palabra mas larga es: "+ palabraMasLarga);
+        System.out.println("La palabra mas corta es " + palabraMasCorta);
+    }
+    
+    /*
+        Tiempo de viaje
+Un viajero desea saber cuánto tiempo tomó un viaje que realizó. Él tiene la duración en minutos de cada uno de los tramos del viaje.
+Desarrolle un programa que permita ingresar los tiempos de viaje de los tramos y entregue como resultado el tiempo total de viaje en formato horas:minutos.
+El programa deja de pedir tiempos de viaje cuando se ingresa un 0.
+Duracion tramo: 15
+Duracion tramo: 30
+Duracion tramo: 87
+Duracion tramo: 0
+Tiempo total de viaje: 2:12 horas
+Duracion tramo: 51
+Duracion tramo: 17
+Duracion tramo: 0
+Tiempo total de viaje: 1:08 horas
+
+    */
+
+
+    public static void tiempoDeViaje(){
+        int n;
+        int sumaDelTiempo = 0;
+        do{
+            Scanner input = new Scanner(System.in);
+            System.out.println("Duracion tramo: ");
+            n = input.nextInt();
+            sumaDelTiempo += n;
+        }while(n != 0);
+        
+        int tiempoEnHoras = 0;
+        while(sumaDelTiempo > 60){
+            sumaDelTiempo -= 60;
+            tiempoEnHoras +=1;
+        }
+        System.out.println("Tiempo total de viaje: "+ tiempoEnHoras + ":"+sumaDelTiempo);
     }
 }
