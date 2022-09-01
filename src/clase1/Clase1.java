@@ -10,11 +10,16 @@ import java.util.Scanner;
 public class Clase1 {
 
     public static void main(String[] args) {
-        /*Scanner input = new Scanner(System.in);
-        System.out.println("Introducir numero: ");
-        int n = input.nextInt();
-        */
-        tiempoDeViaje();
+       Gato gato = new Gato("Mishu", 3, "atigrado", 'H');
+ 
+        System.out.println("Mi gato se llama "+gato.getNombre());
+        System.out.println("Mi gato es color ");
+       gato.comer("croquetas");
+
+       gato.maullar();
+       gato.maullar();
+       gato.maullar();
+       gato.dormir();
     }
 
     
