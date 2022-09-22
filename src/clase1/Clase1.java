@@ -15,7 +15,6 @@ public class Clase1 {
         System.out.println("Mi gato se llama "+gato.getNombre());
         System.out.println("Mi gato es color ");
        gato.comer("croquetas");
-
        gato.maullar();
        gato.maullar();
        gato.maullar();
