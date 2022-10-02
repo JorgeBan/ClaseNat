@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
+
 package clase1;
 
 import java.util.Scanner;
@@ -10,19 +7,12 @@ import java.util.Scanner;
 public class Clase1 {
 
     public static void main(String[] args) {
-       Gato gato = new Gato("Mishu", 3, "atigrado", 'H');
- 
-        System.out.println("Mi gato se llama "+gato.getNombre());
-        System.out.println("Mi gato es color ");
-       gato.comer("croquetas");
-       gato.maullar();
-       gato.maullar();
-       gato.maullar();
-       gato.dormir();
+      ///Empleado e1 = new Empleado("Nataly", 10);
+        System.out.println("la anituedad es: "+ Empleado.getAntiguedad());
     }
 
     
-    public void diaDeLaSemanaConSwitch(){
+    public static void diaDeLaSemanaConSwitch(){
          Scanner input = new Scanner(System.in);
         System.out.println("Introducir numero del 1 al 7: ");
         int numero1 = input.nextInt();
@@ -63,7 +53,6 @@ public class Clase1 {
         
         System.out.println("el dia de la semana es: " + Semana[numero1-1]);
         
-       
     }
     
     public static int verificarMayusculaOMinuscula(char letra){
